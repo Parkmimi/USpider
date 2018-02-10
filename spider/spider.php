@@ -2,7 +2,7 @@
 /*
 名称:USpider(污~蜘蛛)
 版本:1.0
-最后更新时间:2018/02/10 21:35
+最后更新时间:2018/02/10 23:55
 作者:狂放
 作者博客:https://www.iknet.top
 作者地址:https://www.iknet.top/829.html
@@ -35,15 +35,17 @@ function curl_get($url) {
 //reg:<article id="post" class="post"> <p>([\s\S]+?)</p> </article>
 for($n =1 ; $n <=10 ; $n++){
    $html = curl_get('https://www.nihaowua.com/');
-   $preg = preg_match('/<article id="post" class="post"> <p>([\s\S]+?)<\/p> <\/article>/', $html,$array); 
+   $preg = preg_match('/<article id="post" class="post"> <p>([\s\S]+?)<\/p> <\/article>/', $html,$array);  
    if ( $preg == 1 ) {
      $content = $array[1];
      echo $content."\r\n";
-     $data = file_get_contents('./u.txt');
+     $data = file_get_contents('../data/u.txt');
      if(strpos($data,$content) == false){
-	    $handle = fopen("u.txt", "a") or die("Unable to open file!");
+	    $handle = fopen("../data/u.txt", "a") or die("Unable to open file!");
          fwrite($handle, $content."\n");
          fclose($handle);
+    }else{
+        echo "第".$n."此抓取失败\n";
     }
   }
 }
