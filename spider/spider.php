@@ -45,7 +45,7 @@ for($n =1 ; $n <=10 ; $n++){
          fwrite($handle, $content."\n");
          fclose($handle);
     }else{
-        echo "第".$n."此抓取失败\n";
+        echo "第".$n."次抓取失败\n";
     }
   }
 }
