@@ -40,7 +40,7 @@ for($n =1 ; $n <=10 ; $n++){
      $content = $array[1];
      echo $content."\r\n";
      $data = file_get_contents('../data/u.txt');
-     if(strpos($data,$content) == false){
+     if(strpos($data,$content) === false){
 	    $handle = fopen("../data/u.txt", "a") or die("Unable to open file!");
          fwrite($handle, $content."\n");
          fclose($handle);
