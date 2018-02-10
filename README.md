@@ -12,4 +12,4 @@ GitHub项目地址:[https://github.com/kfangf/USpider](https://github.com/kfangf
 # 更新  
 2018/02/10 21:35：初始版本  
 # 食用方法  
-[这里l](https://www.iknet.top/829.html)  
+[这里](https://www.iknet.top/829.html)  
